@@ -1,0 +1,43 @@
+{
+  "projectName": "grid_marcio",
+  "styleFile": "/css/style.css",
+  "assetsFolder": "/assets",
+  "designFramework": "bootstrap5",
+  "frameworks": [
+    {
+      "name": "fontawesome_5",
+      "type": "cdn"
+    },
+    {
+      "name": "bootstrap5",
+      "type": "custom",
+      "options": {
+        "jsIncludePath": "/assets/js/plugins/bootstrap.min.js",
+        "cssIncludePath": "/assets/css/plugins/bootstrap.min.css"
+      }
+    },
+    {
+      "name": "appConnect",
+      "type": "local"
+    }
+  ],
+  "hostingType": "wappler",
+  "projectServerModel": "node",
+  "runtime": "capacitor",
+  "webRootFolder": "/public",
+  "useRouting": true,
+  "addBase": true,
+  "routingHandler": "node",
+  "projectLinksType": "site",
+  "targets": [
+    {
+      "name": "Development",
+      "remoteURL": "http://localhost:3000/",
+      "access": "local",
+      "targetType": "wappler"
+    }
+  ],
+  "activeTarget": "Development",
+  "projectType": "web",
+  "extensions": []
+}

@@ -1,0 +1,24 @@
+{
+  "routes": [
+    {
+      "path": "/treinamento/grid_colaboradores",
+      "page": "treinamento/grid_colaboradores",
+      "layout": "main"
+    },
+    {
+      "path": "/treinamentos/colaboradores",
+      "page": "treinamentos/colaboradores",
+      "layout": "main"
+    },
+    {
+      "path": "/treinamentos/teste",
+      "page": "treinamentos/teste",
+      "layout": "main"
+    },
+    {
+      "path": "/conteudo/grid_marcio",
+      "page": "conteudo/grid_marcio",
+      "layout": "treinamentos"
+    }
+  ]
+}

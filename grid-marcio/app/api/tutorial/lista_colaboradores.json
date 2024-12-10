@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "offset"
+      },
+      {
+        "type": "text",
+        "name": "limit"
+      },
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "",
+        "options": {
+          "comment": "Responsável: Márcio César\nCriado em: 07/12/2024\nObjetivo: Listar os colaboradores de acordo com a empresa logada, através do id da empresa(ecodigo)"
+        }
+      },
+      {
+        "name": "lista_colaboradores",
+        "module": "dbconnector",
+        "action": "paged",
+        "options": {
+          "connection": "wappler",
+          "sql": {
+            "type": "select",
+            "columns": [
+              {
+                "table": "colaboradores",
+                "column": "col_id"
+              },
+              {
+                "table": "colaboradores",
+                "column": "col_cpf"
+              },
+              {
+                "table": "colaboradores",
+                "column": "col_nome"
+              },
+              {
+                "table": "colaboradores",
+                "column": "col_telefone"
+              },
+              {
+                "table": "colaboradores",
+                "column": "col_email"
+              }
+            ],
+            "params": [],
+            "table": {
+              "name": "colaboradores"
+            },
+            "primary": "col_id",
+            "joins": [],
+            "orders": [],
+            "query": "select \"col_id\", \"col_cpf\", \"col_nome\", \"col_telefone\", \"col_email\" from \"colaboradores\""
+          }
+        },
+        "output": true,
+        "meta": [
+          {
+            "name": "offset",
+            "type": "number"
+          },
+          {
+            "name": "limit",
+            "type": "number"
+          },
+          {
+            "name": "total",
+            "type": "number"
+          },
+          {
+            "name": "page",
+            "type": "object",
+            "sub": [
+              {
+                "name": "offset",
+                "type": "object",
+                "sub": [
+                  {
+                    "name": "first",
+                    "type": "number"
+                  },
+                  {
+                    "name": "prev",
+                    "type": "number"
+                  },
+                  {
+                    "name": "next",
+                    "type": "number"
+                  },
+                  {
+                    "name": "last",
+                    "type": "number"
+                  }
+                ]
+              },
+              {
+                "name": "current",
+                "type": "number"
+              },
+              {
+                "name": "total",
+                "type": "number"
+              }
+            ]
+          },
+          {
+            "name": "data",
+            "type": "array",
+            "sub": [
+              {
+                "type": "number",
+                "name": "col_id"
+              },
+              {
+                "type": "text",
+                "name": "col_cpf"
+              },
+              {
+                "type": "text",
+                "name": "col_nome"
+              },
+              {
+                "type": "text",
+                "name": "col_telefone"
+              },
+              {
+                "type": "text",
+                "name": "col_email"
+              }
+            ]
+          }
+        ],
+        "outputType": "object"
+      }
+    ]
+  }
+}
